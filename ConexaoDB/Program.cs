@@ -113,7 +113,28 @@ namespace ConexaoDB
                 cargo = cargo2,
                 data = DateTime.Parse(data2)
             };
-            new UsuarioAplicacao().insertComando( usuarioComando);
+            new UsuarioAplicacao().salvarComando( usuarioComando);
+
+            // update com nova forma
+            Console.WriteLine("");
+            Console.Write("Alteração De Dados");
+            Console.WriteLine("Informe o id do Usuario que deseja alterar: ");
+            int id = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o nome:");
+            string nome3 = Console.ReadLine();
+            Console.WriteLine("Digite o cargo: ");
+            string cargo3 = Console.ReadLine();
+            Console.WriteLine("Digite a Data: ");
+            string data3 = Console.ReadLine();
+            Usuarios usuarioComando2 = new Usuarios
+            {
+                usuarioId = id,
+                nome = nome3,
+                cargo = cargo3,
+                data = DateTime.Parse(data3)
+            };
+            new UsuarioAplicacao().salvarComando(usuarioComando2);
+
 
             Console.ReadKey();
 
